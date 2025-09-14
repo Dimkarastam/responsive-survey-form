@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Survey Form</title>
+</head>
+
+<body>
+  <h1 id="title">freeCodeCamp Survey Form</h1>
+  <p id="description"><em>Thank you for your valuable input in helping us enhance the platform.</em></p>
+
+  <form id="survey-form" method="post" action="">
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label id="name-label" for="name">Full Name
+        <input placeholder="Enter Your Full Name" id="name" name="name" type="text" required>
+      </label>
+
+      <label id="email-label" for="email">Email
+        <input placeholder="Enter Your Email" id="email" name="email" type="email" required>
+      </label>
+
+      <label id="number-label" for="number">Age (optional)
+        <input placeholder="Enter Your Age" id="number" name="age" type="number" min="18" max="120" inputmode="numeric">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Current Role</legend>
+      <label for="dropdown">Select Current Role</label>
+      <select id="dropdown" name="role">
+        <option value="">Select Current Role</option>
+        <option value="1">Student</option>
+        <option value="2">Full Time Job</option>
+        <option value="3">Full Time Learner</option>
+        <option value="4">Freelancer</option>
+        <option value="5">Other</option>
+        <option value="6">Prefer not to say</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Would you recommend us?</legend>
+      <div>
+        <input type="radio" id="rec-1" name="recommendation" value="1">
+        <label for="rec-1">Definitely</label>
+      </div>
+      <div>
+        <input type="radio" id="rec-2" name="recommendation" value="2">
+        <label for="rec-2">Maybe</label>
+      </div>
+      <div>
+        <input type="radio" id="rec-3" name="recommendation" value="3">
+        <label for="rec-3">Definitely Not</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>What should we focus on?</legend>
+      <div>
+        <input type="checkbox" id="feat-1" name="improvements" value="1">
+        <label for="feat-1">Front-end Projects</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-2" name="improvements" value="2">
+        <label for="feat-2">Back-end Projects</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-3" name="improvements" value="3">
+        <label for="feat-3">Data Visualization</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-4" name="improvements" value="4">
+        <label for="feat-4">Challenges</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-5" name="improvements" value="5">
+        <label for="feat-5">Open Source Community</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-6" name="improvements" value="6">
+        <label for="feat-6">Gitter help rooms</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-7" name="improvements" value="7">
+        <label for="feat-7">Videos</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-8" name="improvements" value="8">
+        <label for="feat-8">City Meetups</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-9" name="improvements" value="9">
+        <label for="feat-9">Wiki</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-10" name="improvements" value="10">
+        <label for="feat-10">Forum</label>
+      </div>
+      <div>
+        <input type="checkbox" id="feat-11" name="improvements" value="11">
+        <label for="feat-11">Additional Courses</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Comments</legend>
+      <label for="referrer">Any comments or suggestions?</label>
+      <textarea id="referrer" name="comments" placeholder="Enter your comment here..." rows="5"></textarea>
+    </fieldset>
+
+    <input id="submit" type="submit" value="Submit">
+  </form>
+</body>
+
+</html>

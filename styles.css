@@ -1,0 +1,177 @@
+/* Base sizing and color scheme */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Helps native controls and UA UI render correctly for dark surfaces */
+  color-scheme: dark;
+  /* Theme tokens (kept close to original palette) */
+  --bg: #1b1b32;
+  --fg: #f5f6f7;
+  --surface: #0a0a23;
+  --accent: #3b3b4f;
+  --focus: #7aa2ff;
+  /* visible focus ring */
+  --error: #e03131;
+}
+
+/* Page */
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: Tahoma, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Headings, intro text */
+h1,
+p {
+  margin: 1em auto;
+  text-align: center;
+}
+
+/* Form layout */
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+
+  display: grid;
+  gap: 1rem;
+}
+
+/* Grouping */
+fieldset {
+  border: none;
+  padding: 1.5rem 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Label and controls */
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  margin: 10px 0 0 0;
+  min-height: 2.5rem;
+  color: #ffffff;
+  background-color: var(--surface);
+  border: 1px solid var(--surface);
+  border-radius: 6px;
+  padding: 0.625rem 0.75rem;
+}
+
+/* Native control accent (checkboxes, radios, ranges, progress) */
+input[type="checkbox"],
+input[type="radio"] {
+  /* Keep native size but apply brand accent */
+  accent-color: var(--focus);
+  width: 1.125rem;
+  height: 1.125rem;
+  min-height: 0;
+  /* override general min-height for these controls */
+}
+
+/* Radios/checkboxes stacked neatly (uses the div wrappers in HTML) */
+fieldset>div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.35rem 0;
+}
+
+fieldset>div>label {
+  margin: 0;
+  /* avoid double spacing in stacked items */
+}
+
+/* Placeholder contrast */
+::placeholder {
+  color: #aab0c0;
+}
+
+/* Focus visibility (keyboard-friendly) */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+#submit:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Validation states (only once the user interacts when supported) */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--error);
+}
+
+/* Fallback when :user-invalid isn’t supported */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: var(--error);
+}
+
+/* Submit button */
+input[type="submit"],
+#submit {
+  display: block;
+  width: 60%;
+  min-width: 300px;
+  margin: 1em auto;
+  height: 2.5em;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: var(--accent);
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 120ms ease, opacity 120ms ease;
+}
+
+input[type="submit"]:hover,
+#submit:hover {
+  background-color: #4a4a61;
+}
+
+input[type="submit"]:active,
+#submit:active {
+  transform: translateY(1px);
+}
+
+input[type="submit"]:disabled,
+#submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
